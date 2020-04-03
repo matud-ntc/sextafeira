@@ -19,12 +19,13 @@ class App extends Component {
         zIndex:1000
       }}>  
       <img src={logo} alt="logo" style={{height:300, width:300, marginRight:400}}></img>
-      <iframe align='middle' width="30%" height="170px"  frameborder="0" seamless  src="//www.caster.fm/widgets/em_player.php?uid=517083&c=000000&t=color"><p>Your browser does not support iframes.</p></iframe>
+      <iframe width="300" height="170px"  frameborder="0" seamless  src="//www.caster.fm/widgets/em_player.php?uid=517083&c=000000&t=color"><p>Your browser does not support iframes.</p></iframe>
 
       <div style={{ height: '500px', overflowY: 'scroll', display: 'block',
           marginLeft: 'auto',
           marginRight: 'auto',
           width: '40%',
+          minWidth: '300px',
           marginTop:50 }}>
         <FacebookProvider appId="895498000924043" style={{ }}>
         <Comments href="https://www.facebook.com/Testestest-100720924932190" />
