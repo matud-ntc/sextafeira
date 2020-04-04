@@ -9,6 +9,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-facebook": "^8.1.4",
+    "react-helmet": "^5.2.1",
     "react-iframe": "^1.8.0",
     "react-player": "^1.15.3",
     "react-scripts": "3.4.1"
