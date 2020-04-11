@@ -8,6 +8,7 @@ import { FacebookProvider, Comments } from 'react-facebook';
 import {Helmet} from 'react-helmet';
 import font from './fonts/Montserrat-Bold.ttf';
 import { Divider, Tab } from 'semantic-ui-react'
+import MediaQuery from 'react-responsive'
 
 import {
   BrowserView,
@@ -137,7 +138,7 @@ class App extends Component {
         <BrowserView>
           <div style={{marginTop:0, marginLeft:0, marginRight:0, width:'100%', height:190, backgroundColor: '#e3e3e3', boxShadow:'0 4px 8px rgba(255, 231, 231, 0.6)', zIndex: 2, position: 'fixed'}}>
             <img src={logo} alt="logo" style={{height:150, width:300, marginRight:280, marginLeft:90, minWidth:40, minHeight:40}}></img>
-            <iframe marginTop="10" width="500" height="170"  frameborder="0" seamless  src="//www.caster.fm/widgets/em_player.php?uid=517083&c=000000&t=color"><p>Your browser does not support iframes.</p></iframe>
+            <iframe marginTop="10" width="300" height="170"  frameborder="0" seamless  src="//www.caster.fm/widgets/em_player.php?uid=517083&c=000000&t=color"><p>Your browser does not support iframes.</p></iframe>
             <img src={slogan} alt="logo" style={{height:100, width:400, marginLeft: 130, marginBottom:27, minWidth:40, minHeight:40}}></img>
           </div>
           <div style={{ height: '600px',
