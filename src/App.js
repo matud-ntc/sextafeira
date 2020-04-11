@@ -71,7 +71,7 @@ class App extends Component {
               paddingTop:300
                 }}>
                   <Tabs>
-        <TabList color='#feac31' minWidth='40px'>
+        <TabList color='#f00166' minWidth='40px'>
           <Tab>Lunes</Tab>
           <Tab>Martes</Tab>
           <Tab>Miercoles</Tab>
