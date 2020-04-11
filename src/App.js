@@ -65,7 +65,7 @@ class App extends Component {
         </MobileView>
           <div style={{ height: '600px',
               marginLeft: 'auto',
-              marginRight: 'auto',
+              marginRight: 'auto', 
               width: '600px',
               minWidth: '41px',
               paddingTop:300
@@ -84,7 +84,7 @@ class App extends Component {
           <Card style={{backgroundColor: '#e3e3e3', alignItems:'center'}}>
             <CardContent >
               <Typography  variant="h5" component="h2">
-                Todavia no hay horarios..
+                Tteteteteete
               </Typography>
             </CardContent>  
           </Card>
