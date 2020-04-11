@@ -3,18 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.9",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@types/react-helmet": "^5.0.15",
+    "@types/react-tabs": "^2.3.1",
     "react": "^16.13.1",
     "react-animate-on-scroll": "^2.1.5",
+    "react-count": "^0.2.4",
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.13.1",
     "react-facebook": "^8.1.4",
+    "react-ga": "^2.7.0",
     "react-helmet": "^5.2.1",
     "react-iframe": "^1.8.0",
     "react-player": "^1.15.3",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-tabs": "^3.1.0",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
