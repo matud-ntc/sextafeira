@@ -31,14 +31,11 @@ const trackingId = "UA-163328180-1"; // Replace with your Google Analytics track
 
 
 class App extends Component {
-
-  initializeReactGA() {
-    ReactGA.initialize(trackingId);
-    ReactGA.pageview();
-  }
+  
 
   render(){
-
+    ReactGA.initialize(trackingId);
+    ReactGA.pageview();
     return (
       <div style={{backgroundColor: '#373737', 
         width:'100%',
