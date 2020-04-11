@@ -34,8 +34,8 @@ class App extends Component {
   
 
   render(){
-    ReactGA.initialize(trackingId);
-    ReactGA.pageview();
+    ReactGA.initialize('UA-163328180-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
     return (
       <div style={{backgroundColor: '#373737', 
         width:'100%',
