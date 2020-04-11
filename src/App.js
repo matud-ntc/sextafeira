@@ -27,7 +27,7 @@ import ReactGA from 'react-ga';
 import Typography from '@material-ui/core/Typography';
 
 
-const trackingId = "G-XGS1ZZTH63"; // Replace with your Google Analytics tracking ID
+const trackingId = "UA-163328180-1"; // Replace with your Google Analytics tracking ID
 
 
 class App extends Component {
@@ -84,7 +84,7 @@ class App extends Component {
           <Card style={{backgroundColor: '#e3e3e3', alignItems:'center'}}>
             <CardContent >
               <Typography  variant="h5" component="h2">
-                Tteteteteete
+                Todavia no hay horarios...
               </Typography>
             </CardContent>  
           </Card>
