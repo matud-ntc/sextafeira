@@ -175,7 +175,7 @@ class App extends Component {
                       <Typography  variant="h5" component="h2">
                         Miercoles
                       </Typography>
-                      <img src={astro} alt="logo" style={{height:'400px', width:'570px', minWidth:40, minHeight:40}}></img>
+                      <img src={astro} alt="logo" style={{height:'500px', width:'470px', minWidth:40, minHeight:40}}></img>
 
                       <Typography  variant="h5" component="h2">
                         Este espacio todavia no tiene horarios
@@ -258,7 +258,7 @@ class App extends Component {
             <div>
           <Divider hidden />
           <div style={{position:'relative', marginTop:300}}>
-            <ReactCardCarousel spread='wide'>
+            <ReactCardCarousel>
             <Card style={card}>
                     <CardContent >
                       <Typography  variant="h5" component="h2">
