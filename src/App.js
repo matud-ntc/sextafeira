@@ -244,7 +244,7 @@ class App extends Component {
         
         <MobileView>
         <div style={{marginTop:0, marginLeft:0, marginRight:0, width:'100%', height:220, backgroundColor: '#effe05', boxShadow:'0 4px 8px rgba(255, 231, 231, 0.6)', zIndex: 2}}>
-            <img src={logo} alt="logo" style={{height:90, marginTop:0, width:240, marginRight:180, marginLeft:90, minWidth:40, minHeight:40}}></img>
+            <img src={logo} alt="logo" style={{height:90, marginTop:0, width:240, marginRight:180, marginLeft:60, minWidth:40, minHeight:40}}></img>
             <img src={slogan} alt="logo" style={{height:100, marginTop:0,  width:300, marginLeft: 5, marginBottom:27, minWidth: 10, minHeight:10}}></img>
           </div>
           <div style={{
