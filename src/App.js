@@ -120,6 +120,7 @@ class App extends Component {
         top:'0px',
         zIndex:1000,
         background: '#f8f9fb',
+        overflowX: 'hidden',
         left:'0px'
       }}>  
         <link rel="stylesheet" href="https://use.typekit.net/vnr7wcv.css"/>
