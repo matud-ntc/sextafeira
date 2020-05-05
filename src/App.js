@@ -6,7 +6,17 @@ import astro from './Images/astro.png';
 import { FacebookProvider, Comments } from 'react-facebook';
 import {Helmet} from 'react-helmet';
 import { Divider, Tab } from 'semantic-ui-react'
-
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  WhatsappIcon,
+  FacebookIcon,
+  TwitterIcon,
+  FacebookMessengerShareButton,
+  FacebookMessengerIcon
+  
+  } from "react-share";
 import {
   BrowserView,
   MobileView,
@@ -142,7 +152,38 @@ class App extends Component {
           }}>
             <div style={{position:'relative', float:'center', width:'100%'}}>
               <iframe width="400" height="170"  frameborder="0" seamless  src="//www.caster.fm/widgets/em_player.php?uid=517083&c=000000&t=color"><p>Your browser does not support iframes.</p></iframe>
-            </div>
+              <br></br>
+              <text style={compartir}>Comparti SextaFeira</text>
+              <br></br>
+              <FacebookShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>     
+              <TwitterShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>         
+              <WhatsappShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <WhatsappIcon size={32} round />
+              </WhatsappShareButton>         
+              <FacebookMessengerShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <FacebookMessengerIcon  size={32} round />
+              </FacebookMessengerShareButton>      
+              </div>
             <div>
           <Divider hidden />
           <div style={{position:'relative', marginTop:300}}>
@@ -255,6 +296,37 @@ class App extends Component {
           }}>
             <div style={{position:'relative', float:'center', width:'100%'}}>
               <iframe width="300" height="170"  frameborder="0" seamless  src="//www.caster.fm/widgets/em_player.php?uid=517083&c=000000&t=color"><p>Your browser does not support iframes.</p></iframe>
+              <br></br>
+              <text style={compartir}>Comparti SextaFeira</text>
+              <br></br>
+              <FacebookShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>     
+              <TwitterShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>         
+              <WhatsappShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <WhatsappIcon size={32} round />
+              </WhatsappShareButton>         
+              <FacebookMessengerShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <FacebookMessengerIcon  size={32} round />
+              </FacebookMessengerShareButton>      
             </div>
             <div>
           <Divider hidden />
@@ -388,3 +460,11 @@ padding: '20px',
 height: '60px',
 width: '30%',
 }
+
+var compartir = {
+  fontFamily:'saffran, sans-serif',
+  fontWeight: '800',
+  fontStyle: 'normal'
+}
+
+
