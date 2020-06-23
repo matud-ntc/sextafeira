@@ -22,18 +22,12 @@ import {
   MobileView,
 } from "react-device-detect";
 import 'react-tabs/style/react-tabs.css';
-import { makeStyles } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import ReactGA from 'react-ga';
 import Typography from '@material-ui/core/Typography';
-import  ReactCardCarousel from 'react-card-carousel';
 import wave from './Images/wave.svg'
 import ScrollToTop from './components/ScrollToTop';
 import Carousel from '@brainhubeu/react-carousel';
-
+import '@brainhubeu/react-carousel/lib/style.css';
 interface Props {
   currentView: string,
   token: string
@@ -53,100 +47,322 @@ const App: React.FC<Props> = props => {
   const executeScroll2 = () => scrollToRef(myRef2)
 
   return(
+    <>
+    <BrowserView>
+      <div style={{width:'100%', overflowX: 'hidden', position:'relative'}}>
+        <div className={'div_backgrndimg'} style={{width:'100%', padding:60, marginBottom:320}}>
+          <div style={left}>
+            SEXTA FEIRA
+          </div> 
+          <div style={rightButton}>
+            <span style={{cursor:'pointer', display:'block', marginRight:10}}>Inicio</span>
+          </div> 
+          <div style={rightButton2}>
+            <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll}>Comentarios</span>
+          </div>
+            <div style={rightButton3}>
+            <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll2}>Noticias</span>
+          </div> 
+          <div style={rightButton4}>
+            <span style={{cursor:'pointer', display:'block', marginRight:10}}>Interactivo</span>
+          </div> 
+          <hr style={divider}/>
+
+          <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
+            <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
+          <div id='cstrFreePlayerDiv'></div>          
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
+              <img src={wave}></img>           
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:10 }}>
+              <span style={subtitleStyle}>Por siempre</span>
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:5 }}>
+              <span style={subtitleStyle}>viernes</span>
+          </div>
+          
+            <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:40 }}>
+              <span style={share}>Compartir</span>
+            </div>
+            <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20 }}>
+              <div style={{marginRight:10}}>
+              <FacebookShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton> 
+              </div>    
+              <div style={{marginRight:10}}>
+
+              <TwitterShareButton
+                url="https://sextafeirabu.com"
+                title="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>    
+              </div>     
+              <div style={{marginRight:10}}>
+              <WhatsappShareButton
+                url="https://sextafeirabu.com"
+                title="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <WhatsappIcon size={32} round />
+              </WhatsappShareButton>        
+              </div> 
+            </div>           
+        </div>
+
+        <div style={{width:'100%', backgroundColor:'#fb5252',padding:30}}>
+          <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
+            <span style={titleWhite}>Dejanos tu comentario</span>
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{backgroundColor:'#FFFFFF', width:'40%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
+              <FacebookProvider appId="895498000924043" >
+                <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
+              </FacebookProvider>
+            </div>
+          </div>
+        </div>
+        <div style={{width:'100%', backgroundColor:'#FFFFFF',padding:30, marginBottom:300}}>
+          <div ref={myRef2} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80, marginTop:30 }}>
+            <span style={titleBlack}>Noticias</span>
+          </div>
+            <Carousel slidesPerPage={4} clickToChange centered>
+              <div style={cardStyle}>
+                <Typography  variant="h5" component="h2">
+                  Lunes
+                </Typography>
+                <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                <Typography  variant="h5" component="h2">
+                  Este espacio todavia no tiene horarios
+                </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Martes
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Miercoles
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Jueves
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Viernes
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Sabado
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Domingo
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+            </Carousel>
+        </div>
+        <div style={right}>
+          <ScrollToTop />
+        </div>
+      </div>
+    </BrowserView>
+    <MobileView>
     <div style={{width:'100%', overflowX: 'hidden', position:'relative'}}>
-      <div className={'div_backgrndimg'} style={{width:'100%', padding:60, marginBottom:320}}>
-        <div style={left}>
-          SEXTA FEIRA
-        </div> 
-        <div style={rightButton}>
-          <span style={{cursor:'pointer', display:'block', marginRight:10}}>Inicio</span>
-        </div> 
-        <div style={rightButton2}>
-          <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll}>Comentarios</span>
-        </div>
-          <div style={rightButton3}>
-          <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll2}>Noticias</span>
-        </div> 
-        <div style={rightButton4}>
-          <span style={{cursor:'pointer', display:'block', marginRight:10}}>Interactivo</span>
-        </div> 
-        <hr style={divider}/>
+        <div className={'div_backgrndimg'} style={{width:'100%', marginBottom:120}}>
+          <div style={left}>
+            SEXTA FEIRA
+          </div> 
+          <hr style={divider}/>
 
-        <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
-          <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
-        <div id='cstrFreePlayerDiv'></div>          
-        </div>
-        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-            <img src={wave}></img>           
-        </div>
-        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:10 }}>
-            <span style={subtitleStyle}>Por siempre</span>
-        </div>
-        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:5 }}>
-            <span style={subtitleStyle}>viernes</span>
-        </div>
-        
-          <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:40 }}>
-            <span style={share}>Compartir</span>
+          <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
+            <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
+          <div id='cstrFreePlayerDiv'></div>          
           </div>
-          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20 }}>
-            <div style={{marginRight:10}}>
-            <FacebookShareButton
-              url="https://sextafeirabu.com"
-              quote="Opa, sextafeira esta en vivo"
-              className="Demo__some-network__share-button"
-            >
-              <FacebookIcon size={32} round />
-            </FacebookShareButton> 
-            </div>    
-            <div style={{marginRight:10}}>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
+              <img src={wave}></img>           
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:10 }}>
+              <span style={subtitleStyle}>Por siempre</span>
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:5 }}>
+              <span style={subtitleStyle}>viernes</span>
+          </div>
+          
+            <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:40 }}>
+              <span style={share}>Compartir</span>
+            </div>
+            <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20 }}>
+              <div style={{marginRight:10}}>
+              <FacebookShareButton
+                url="https://sextafeirabu.com"
+                quote="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton> 
+              </div>    
+              <div style={{marginRight:10}}>
 
-            <TwitterShareButton
-              url="https://sextafeirabu.com"
-              title="Opa, sextafeira esta en vivo"
-              className="Demo__some-network__share-button"
-            >
-              <TwitterIcon size={32} round />
-            </TwitterShareButton>    
-            </div>     
-            <div style={{marginRight:10}}>
-            <WhatsappShareButton
-              url="https://sextafeirabu.com"
-              title="Opa, sextafeira esta en vivo"
-              className="Demo__some-network__share-button"
-            >
-              <WhatsappIcon size={32} round />
-            </WhatsappShareButton>        
-            </div> 
-          </div>           
-      </div>
-
-      <div style={{width:'100%', backgroundColor:'#fb5252',padding:30}}>
-        <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
-          <span style={titleWhite}>Dejanos tu comentario</span>
+              <TwitterShareButton
+                url="https://sextafeirabu.com"
+                title="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>    
+              </div>     
+              <div style={{marginRight:10}}>
+              <WhatsappShareButton
+                url="https://sextafeirabu.com"
+                title="Opa, sextafeira esta en vivo"
+                className="Demo__some-network__share-button"
+              >
+                <WhatsappIcon size={32} round />
+              </WhatsappShareButton>        
+              </div> 
+            </div>           
         </div>
-        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-          <div style={{backgroundColor:'#FFFFFF', width:'40%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
-            <FacebookProvider appId="895498000924043" >
-              <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
-            </FacebookProvider>
+
+        <div style={{width:'100%', backgroundColor:'#fb5252',padding:30}}>
+          <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
+            <span style={titleWhite}>Dejanos tu comentario</span>
+          </div>
+          <div style={{width:'80%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{backgroundColor:'#FFFFFF', width:'40%', minWidth:300, display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
+              <FacebookProvider appId="895498000924043" >
+                <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
+              </FacebookProvider>
+            </div>
           </div>
         </div>
-      </div>
-      <div style={{width:'100%', backgroundColor:'#f8f9fb',padding:30}}>
-        <div ref={myRef2} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
-          <span style={titleBlack}>Noticias</span>
-        </div>
-        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-          <Carousel slidesPerPage={2} clickToChange={true} centered>
+        <div style={{width:'100%', backgroundColor:'#FFFFFF',padding:30, marginBottom:300}}>
+          <div ref={myRef2} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80, marginTop:30 }}>
+            <span style={titleBlack}>Noticias</span>
+          </div>
+            <Carousel slidesPerPage={2} clickToChange centered>
+              <div style={cardStyle}>
+                <Typography  variant="h5" component="h2">
+                  Lunes
+                </Typography>
+                <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
-          </Carousel>
+                <Typography  variant="h5" component="h2">
+                  Este espacio todavia no tiene horarios
+                </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Martes
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Miercoles
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Jueves
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Viernes
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Sabado
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+              <div style={cardStyle}>
+                  <Typography  variant="h5" component="h2">
+                    Domingo
+                  </Typography>
+                  <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
+
+                  <Typography  variant="h5" component="h2">
+                    Este espacio todavia no tiene horarios
+                  </Typography>
+              </div>
+            </Carousel>
+        </div>
+        <div style={right}>
+          <ScrollToTop />
         </div>
       </div>
-      <div style={right}>
-        <ScrollToTop />
-      </div>
-    </div>
+    </MobileView>
+    </>
   );
 }
 
@@ -246,12 +462,11 @@ const divider = {
 }
 
 const cardStyle = {
-  height: "80%",
+  height: "90%",
   width: "80%",
-  paddingTop: "80px",
   textAlign: "center" as "center",
-  background: "#FFFFFF",
-  boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2)',
+  background: "#000000",
+  boxShadow: '0px 2px 15px 0px rgba(0, 0, 0, 0.11)',
   fontSize: "7px",
   borderRadius: "10px",
   marginBottom: 20,
