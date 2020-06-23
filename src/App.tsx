@@ -4,8 +4,8 @@ import logo from './Images/bg.png';
 import slogan from './Images/slogan.png';
 import astro from './Images/astro.png';
 import { FacebookProvider, Comments } from 'react-facebook';
-import {Helmet} from 'react-helmet';
-import { Divider, Tab } from 'semantic-ui-react'
+import ReactPlayer from 'react-player'
+
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -45,11 +45,12 @@ const App: React.FC<Props> = props => {
   const executeScroll = () => scrollToRef(myRef)
   const myRef2 = useRef(null)
   const executeScroll2 = () => scrollToRef(myRef2)
-
+  const myRef3 = useRef(null)
+  const executeScroll3 = () => scrollToRef(myRef3)
   return(
     <>
     <BrowserView>
-      <div style={{width:'100%', overflowX: 'hidden', position:'relative'}}>
+      <div style={{width:'100%', overflowX: 'hidden', position:'relative', height:'100%'}}>
         <div className={'div_backgrndimg'} style={{width:'100%', padding:60, marginBottom:320}}>
           <div style={left}>
             SEXTA FEIRA
@@ -64,7 +65,7 @@ const App: React.FC<Props> = props => {
             <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll2}>Noticias</span>
           </div> 
           <div style={rightButton4}>
-            <span style={{cursor:'pointer', display:'block', marginRight:10}}>Interactivo</span>
+            <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll3}>Podcasts</span>
           </div> 
           <hr style={divider}/>
 
@@ -129,7 +130,7 @@ const App: React.FC<Props> = props => {
             </div>
           </div>
         </div>
-        <div style={{width:'100%', backgroundColor:'#FFFFFF',padding:30, marginBottom:300}}>
+        <div style={{width:'100%', backgroundColor:'#FFFFFF',padding:30, marginBottom:460}}>
           <div ref={myRef2} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80, marginTop:30 }}>
             <span style={titleBlack}>Noticias</span>
           </div>
@@ -206,6 +207,17 @@ const App: React.FC<Props> = props => {
               </div>
             </Carousel>
         </div>
+        <div style={{width:'100%', backgroundColor:'#555555',padding:30, height:1200}}>
+          <div ref={myRef3} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
+            <span style={titleWhite}>Podcasts</span>
+          </div>
+          {/*<div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
+            <ReactPlayer url={'https://www.mixcloud.com/mat%C3%ADas-dalto/mayo-11-de-2020/'}></ReactPlayer>
+  </div>*/}
+          <div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
+            <iframe src='https://www.4shared.com/web/embed/audio/file/WCTemy9Vea?type=NORMAL&widgetWidth=530&showArtwork=true&playlistHeight=0&widgetRid=37225837388' style={{overflow:'hidden',height:'152px',width:'530px',border: 0,margin:0}}></iframe>
+          </div>
+        </div>
         <div style={right}>
           <ScrollToTop />
         </div>
@@ -268,19 +280,19 @@ const App: React.FC<Props> = props => {
             </div>           
         </div>
 
-        <div style={{width:'100%', backgroundColor:'#fb5252',padding:30}}>
-          <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
+        <div style={{width:'100%', backgroundColor:'#fb5252'}}>
+          <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'  }}>
             <span style={titleWhite}>Dejanos tu comentario</span>
           </div>
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-            <div style={{backgroundColor:'#FFFFFF', width:'40%', minWidth:300, display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
+            <div style={{backgroundColor:'#FFFFFF', width:'40%', minWidth:300, display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px", marginBottom:20}}>
               <FacebookProvider appId="895498000924043" >
                 <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
               </FacebookProvider>
             </div>
           </div>
         </div>
-        <div style={{width:'100%', backgroundColor:'#FFFFFF',padding:30, marginBottom:300}}>
+        <div style={{width:'100%', backgroundColor:'#FFFFFF', marginBottom:200}}>
           <div ref={myRef2} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80, marginTop:30 }}>
             <span style={titleBlack}>Noticias</span>
           </div>
@@ -357,6 +369,17 @@ const App: React.FC<Props> = props => {
               </div>
             </Carousel>
         </div>
+        <div style={{width:'100%', backgroundColor:'#555555', height:800}}>
+          <div ref={myRef3} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
+            <span style={titleWhite}>Podcasts</span>
+          </div>
+          {/*<div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
+            <ReactPlayer url={'https://www.mixcloud.com/mat%C3%ADas-dalto/mayo-11-de-2020/'}></ReactPlayer>
+  </div>*/}
+          <div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
+            <iframe src='https://www.4shared.com/web/embed/audio/file/WCTemy9Vea?type=MINI&widgetWidth=330&showArtwork=true&playlistHeight=0&widgetRid=591127821130' style={{overflow:'hidden',height:'62px',width:'330px',border: 0,margin:0}}></iframe>
+          </div>
+        </div>
         <div style={right}>
           <ScrollToTop />
         </div>
@@ -380,7 +403,8 @@ var titleWhite = {
   fontFamily: 'halyard-display, sans-serif',
   fontSize: 'calc(3em + 1vw)',
   color:'#FFFFFF',
-  fontWeight:600
+  fontWeight:600,
+  textAlign:'center' as 'center'
 }
 
 var titleBlack = {
