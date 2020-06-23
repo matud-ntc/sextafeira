@@ -57,16 +57,16 @@ const App: React.FC<Props> = props => {
           </div> 
 
           <div style={rightButton}>
-            <span style={{cursor:'pointer', display:'block', marginRight:10}}>Inicio</span>
+            <span style={{cursor:'pointer', display:'block', marginRight:10, fontSize:20, fontWeight:500}}>Inicio</span>
           </div> 
           <div style={rightButton2}>
-            <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll}>Comentarios</span>
+            <span style={{cursor:'pointer', display:'block', marginRight:10, fontSize:20, fontWeight:500}} onClick={executeScroll2}>Noticias</span>
           </div>
             <div style={rightButton3}>
-            <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll2}>Noticias</span>
+            <span style={{cursor:'pointer', display:'block', marginRight:10, fontSize:20, fontWeight:500}} onClick={executeScroll2}>Podcasts</span>
           </div> 
           <div style={rightButton4}>
-            <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll3}>Podcasts</span>
+            <span style={{cursor:'pointer', display:'block', marginRight:10, fontSize:20, fontWeight:500}} onClick={executeScroll}>Comentarios</span>
           </div> 
 
           <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
@@ -82,7 +82,6 @@ const App: React.FC<Props> = props => {
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:5 }}>
               <span style={titleWhite}>viernes</span>
           </div>
-          
             <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:40 }}>
               <span style={share}>Compartir</span>
             </div>
@@ -117,27 +116,15 @@ const App: React.FC<Props> = props => {
               </div> 
             </div>           
         </div>
-
-        <div style={{width:'100%', backgroundColor:'#000000',padding:30}}>
-          <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
-            <span style={titleWhite}>Dejanos tu comentario</span>
-          </div>
-          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-            <div style={{backgroundColor:'#FFFFFF', width:'40%',minWidth:600, display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
-              <FacebookProvider appId="895498000924043" >
-                <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
-              </FacebookProvider>
-            </div>
-          </div>
-        </div>
-        <div style={{width:'100%', backgroundColor:'#FFFFFF',padding:30, marginBottom:460}}>
-          <div ref={myRef2} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80, marginTop:30 }}>
+        
+        
+        <div ref={myRef2} style={{width:'100%', backgroundColor:'#FFFFFF',padding:30, marginBottom:460}}>
+          <div  style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80, marginTop:50 }}>
             <span style={titleBlack}>Noticias</span>
           </div>
             <Carousel slidesPerPage={4} clickToChange centered>
               <div style={cardStyle}>
-                <Typography  variant="h5" component="h2">
-                </Typography>
+                
                 <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                 <Typography  variant="h5" component="h2">
@@ -145,8 +132,7 @@ const App: React.FC<Props> = props => {
                 </Typography>
               </div>
               <div style={cardStyle}>
-                  <Typography  variant="h5" component="h2">
-                  </Typography>
+                  
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
@@ -154,8 +140,7 @@ const App: React.FC<Props> = props => {
                   </Typography>
               </div>
               <div style={cardStyle}>
-                  <Typography  variant="h5" component="h2">
-                  </Typography>
+                  
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
@@ -163,8 +148,7 @@ const App: React.FC<Props> = props => {
                   </Typography>
               </div>
               <div style={cardStyle}>
-                  <Typography  variant="h5" component="h2">
-                  </Typography>
+                  
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
@@ -172,8 +156,7 @@ const App: React.FC<Props> = props => {
                   </Typography>
               </div>
               <div style={cardStyle}>
-                  <Typography  variant="h5" component="h2">
-                  </Typography>
+                  
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
@@ -181,8 +164,7 @@ const App: React.FC<Props> = props => {
                   </Typography>
               </div>
               <div style={cardStyle}>
-                  <Typography  variant="h5" component="h2">
-                  </Typography>
+                  
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
@@ -190,8 +172,7 @@ const App: React.FC<Props> = props => {
                   </Typography>
               </div>
               <div style={cardStyle}>
-                  <Typography  variant="h5" component="h2">
-                  </Typography>
+                  
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
@@ -210,6 +191,19 @@ const App: React.FC<Props> = props => {
           <div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
             <iframe src='https://www.4shared.com/web/embed/audio/file/WCTemy9Vea?type=NORMAL&widgetWidth=530&showArtwork=true&playlistHeight=0&widgetRid=37225837388' style={{overflow:'hidden',height:'152px',width:'530px',border: 0,margin:0}}></iframe>
           </div>
+        </div>
+        <div style={{width:'100%', backgroundColor:'#000000',padding:30}}>
+          <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
+            <span style={titleWhite}>Dejanos tu comentario</span> 
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{backgroundColor:'#FFFFFF', width:'40%',minWidth:600, display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
+              <div className="fb-comments" data-href="https://www.facebook.com/sextafeirabu/" data-numposts="11" data-width=""></div>
+            </div>
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20,}}>
+          <div className="fb-page" data-href="https://www.facebook.com/sextafeirabu/" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/sextafeirabu/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/sextafeirabu/">Sextafeira Radio</a></blockquote></div>
+        </div>
         </div>
         <div style={right}>
           <ScrollToTop />
@@ -273,18 +267,7 @@ const App: React.FC<Props> = props => {
             </div>           
         </div>
 
-        <div style={{width:'100%', backgroundColor:'#000000'}}>
-          <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'  }}>
-            <span style={titleWhite}>Dejanos tu comentario</span>
-          </div>
-          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-            <div style={{backgroundColor:'#FFFFFF', width:'40%', minWidth:300, display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px", marginBottom:20}}>
-              <FacebookProvider appId="895498000924043" >
-                <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
-              </FacebookProvider>
-            </div>
-          </div>
-        </div>
+        
         <div style={{width:'100%', backgroundColor:'#FFFFFF', marginBottom:200}}>
           <div ref={myRef2} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80, marginTop:30 }}>
             <span style={titleBlack}>Noticias</span>
@@ -373,6 +356,21 @@ const App: React.FC<Props> = props => {
             <iframe src='https://www.4shared.com/web/embed/audio/file/WCTemy9Vea?type=MINI&widgetWidth=330&showArtwork=true&playlistHeight=0&widgetRid=591127821130' style={{overflow:'hidden',height:'62px',width:'330px',border: 0,margin:0}}></iframe>
           </div>
         </div>
+        <div style={{width:'100%', backgroundColor:'#000000'}}>
+          <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'  }}>
+            <span style={titleWhite}>Dejanos tu comentario</span>
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{backgroundColor:'#FFFFFF', width:'40%', minWidth:300, display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px", marginBottom:20}}>
+              <FacebookProvider appId="206828777134701" >
+                <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/sextafeirabu/" />
+              </FacebookProvider>
+            </div>
+          </div>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20,}}>
+          <div className="fb-page" data-href="https://www.facebook.com/sextafeirabu/" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/sextafeirabu/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/sextafeirabu/">Sextafeira Radio</a></blockquote></div>
+        </div>
+        </div>
         <div style={right}>
           <ScrollToTop />
         </div>
@@ -420,7 +418,7 @@ const rightButton = {
   position:'absolute' as 'absolute',
   display:'inline-block',
   top:10,
-  right:370,
+  right:380,
 }
 
 const left = {
@@ -440,7 +438,7 @@ const rightButton2 = {
   position:'absolute' as 'absolute',
   display:'inline-block',
   top:10,
-  right:290,
+  right:300,
 }
 
 const rightButton3 = {
@@ -450,7 +448,7 @@ const rightButton3 = {
   position:'absolute' as 'absolute',
   display:'inline-block',
   top:10,
-  right:160,
+  right:200,
 }
 
 const rightButton4 = {
@@ -460,7 +458,7 @@ const rightButton4 = {
   position:'absolute' as 'absolute',
   display:'inline-block',
   top:10,
-  right:70,
+  right:90,
 }
 
 const right = {
