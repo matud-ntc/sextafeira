@@ -51,8 +51,8 @@ const App: React.FC<Props> = props => {
   
   return(
     <div style={{width:'100%', overflowX: 'hidden', position:'relative'}}>
-      <div style={{width:'100%', padding:40, marginBottom:280}}>
-        <div style={{marginLeft:10, float:'left', width:'65%',display:'flex',  justifyContent: 'left', alignItems: 'left', marginTop:10 }}>
+      <div className={'div_backgrndimg'} style={{width:'100%', padding:60, marginBottom:320}}>
+        <div style={left}>
           SEXTA FEIRA
         </div> 
         <div style={rightButton}>
@@ -67,100 +67,84 @@ const App: React.FC<Props> = props => {
         <div style={rightButton4}>
           <span style={{cursor:'pointer', display:'block', marginRight:10}}>Interactivo</span>
         </div> 
+        <hr style={divider}/>
+
+        <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
+          <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
+        <div id='cstrFreePlayerDiv'></div>          
+        </div>
         <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
             <img src={wave}></img>           
         </div>
         <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:10 }}>
-            <span style={subtitleStyle}>Por Siempre</span>
+            <span style={subtitleStyle}>Por siempre</span>
         </div>
-        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:10 }}>
-            <span style={subtitleStyle}>VIERNES</span>
+        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:5 }}>
+            <span style={subtitleStyle}>viernes</span>
         </div>
-        <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
-            <iframe height='170px' seamless src='//www.caster.fm/widgets/em_player.php?jsinit=true&uid=517083&t=blue&c=&embed=true'></iframe>
-          </div>
-          <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center' }}>
+        
+          <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:40 }}>
             <span style={share}>Compartir</span>
           </div>
-          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20 }}>
+            <div style={{marginRight:10}}>
             <FacebookShareButton
               url="https://sextafeirabu.com"
               quote="Opa, sextafeira esta en vivo"
               className="Demo__some-network__share-button"
             >
               <FacebookIcon size={32} round />
-            </FacebookShareButton>     
+            </FacebookShareButton> 
+            </div>    
+            <div style={{marginRight:10}}>
+
             <TwitterShareButton
               url="https://sextafeirabu.com"
               title="Opa, sextafeira esta en vivo"
               className="Demo__some-network__share-button"
             >
               <TwitterIcon size={32} round />
-            </TwitterShareButton>         
+            </TwitterShareButton>    
+            </div>     
+            <div style={{marginRight:10}}>
             <WhatsappShareButton
               url="https://sextafeirabu.com"
               title="Opa, sextafeira esta en vivo"
               className="Demo__some-network__share-button"
             >
               <WhatsappIcon size={32} round />
-            </WhatsappShareButton>         
+            </WhatsappShareButton>        
+            </div> 
           </div>           
       </div>
-      <div ref={myRef} style={{width:'100%', backgroundColor:'#2d5e92', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:10 }}>
-        <span style={titleWhite}>Dejanos tu comentario</span>
+      <div style={{width:'100%', backgroundColor:'#fb5252',padding:30}}>
+        <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
+          <span style={titleWhite}>Dejanos tu comentario</span>
         </div>
-        <div ref={myRef} style={{width:'100%', backgroundColor:'#2d5e92', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-
-        <FacebookProvider appId="895498000924043" >
-          <Comments colorScheme="dark" orderBy="reverse_time" numPosts="11" href="https://www.facebook.com/Testestest-100720924932190" />
-        </FacebookProvider>
+        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
+          <div style={{backgroundColor:'#FFFFFF', width:'40%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",
+}}>
+            <FacebookProvider appId="895498000924043" >
+              <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
+            </FacebookProvider>
+          </div>
+        </div>
       </div>
-      <ScrollToTop />
+      <div style={right}>
+        <ScrollToTop />
+      </div>
     </div>
   );
 }
 
 export default App;
 
-var card = {
-  backgroundColor: '#FFFFFF', 
-  alignItems:'center',
-}
-var cardMobile = {
-  marginLeft:20,
-  marginRight:20,
-  backgroundColor: '#FFFFFF', 
-  alignItems:'center',
-  width:'87%'
-}
-var style = {
-  backgroundColor: "#F8F8F8",
-  borderTop: "1px solid #E7E7E7",
-  textAlign: "center",
-  padding: "20px",
-  position: "fixed",
-  left: "0",
-  bottom: "0",
-  height: "60px",
-  width: "30%",
-}
-
-var phantom = {
-display: 'block',
-padding: '20px',
-height: '60px',
-width: '30%',
-}
-
-var compartir = {
-  fontFamily:'saffran, sans-serif',
-  fontWeight: '800',
-  fontStyle: 'normal'
-}
-
 var subtitleStyle = {
-  fontFamily: 'Suez One, serif',
+  fontFamily: 'halyard-display, sans-serif',
+  fontWeight:600,
   fontSize: 'calc(4em + 1vw)',
+  textTransform: 'uppercase' as 'uppercase'
+  
 }
 
 var titleWhite = {
@@ -183,6 +167,16 @@ const rightButton = {
   display:'inline-block',
   top:10,
   right:370,
+}
+
+const left = {
+  width: '100',
+  marginTop: '33px',
+  marginRight: '18px',
+  position:'absolute' as 'absolute',
+  display:'inline-block',
+  top:10,
+  left:10,
 }
 
 const rightButton2 = {
@@ -219,8 +213,14 @@ const right = {
   width: '17px',
   marginTop: '33px',
   marginRight: '18px',
-  position:'absolute' as 'absolute',
-  top:280,
-  right:300,
+  position: 'fixed' as 'fixed',
+  bottom:'20px',
+  right:'20px',
   cursor: 'pointer' as 'pointer',
+}
+
+const divider = {
+  width: '100%',
+  borderTop: '1px solid #EEEEEE',
+  borderBottom: 'none'
 }
