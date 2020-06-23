@@ -1,6 +1,6 @@
 import React, {Component, useRef} from 'react';
 import './App.css';
-import logo from './Images/bg.png';
+import logo from './Images/logo.png';
 import slogan from './Images/slogan.png';
 import astro from './Images/astro.png';
 import { FacebookProvider, Comments } from 'react-facebook';
@@ -50,11 +50,12 @@ const App: React.FC<Props> = props => {
   return(
     <>
     <BrowserView>
-      <div style={{width:'100%', overflowX: 'hidden', position:'relative', height:'100%'}}>
-        <div className={'div_backgrndimg'} style={{width:'100%', padding:60, marginBottom:320}}>
+      <div style={{width:'100%', overflowX: 'hidden', position:'relative'}}>
+        <div className={'div_backgrndimg'} style={{width:'100%', paddingTop:60, paddingBottom:60,  backgroundImage: 'linear-gradient(white, #f24d15)'}}>
           <div style={left}>
-            SEXTA FEIRA
+            <img src={logo} style={{width:'200px', height:'87px'}}/>
           </div> 
+
           <div style={rightButton}>
             <span style={{cursor:'pointer', display:'block', marginRight:10}}>Inicio</span>
           </div> 
@@ -67,7 +68,6 @@ const App: React.FC<Props> = props => {
           <div style={rightButton4}>
             <span style={{cursor:'pointer', display:'block', marginRight:10}} onClick={executeScroll3}>Podcasts</span>
           </div> 
-          <hr style={divider}/>
 
           <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
             <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
@@ -77,16 +77,16 @@ const App: React.FC<Props> = props => {
               <img src={wave}></img>           
           </div>
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:10 }}>
-              <span style={subtitleStyle}>Por siempre</span>
+              <span style={titleWhite}>Por siempre</span>
           </div>
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:5 }}>
-              <span style={subtitleStyle}>viernes</span>
+              <span style={titleWhite}>viernes</span>
           </div>
           
             <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:40 }}>
               <span style={share}>Compartir</span>
             </div>
-            <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20 }}>
+            <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20, marginBottom:300 }}>
               <div style={{marginRight:10}}>
               <FacebookShareButton
                 url="https://sextafeirabu.com"
@@ -118,7 +118,7 @@ const App: React.FC<Props> = props => {
             </div>           
         </div>
 
-        <div style={{width:'100%', backgroundColor:'#fb5252',padding:30}}>
+        <div style={{width:'100%', backgroundColor:'#000000',padding:30}}>
           <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
             <span style={titleWhite}>Dejanos tu comentario</span>
           </div>
@@ -137,72 +137,65 @@ const App: React.FC<Props> = props => {
             <Carousel slidesPerPage={4} clickToChange centered>
               <div style={cardStyle}>
                 <Typography  variant="h5" component="h2">
-                  Lunes
                 </Typography>
                 <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                 <Typography  variant="h5" component="h2">
-                  Este espacio todavia no tiene horarios
+                  COMMING SOON
                 </Typography>
               </div>
               <div style={cardStyle}>
                   <Typography  variant="h5" component="h2">
-                    Martes
                   </Typography>
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
-                    Este espacio todavia no tiene horarios
+                  COMMING SOON
                   </Typography>
               </div>
               <div style={cardStyle}>
                   <Typography  variant="h5" component="h2">
-                    Miercoles
                   </Typography>
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
-                    Este espacio todavia no tiene horarios
+                  COMMING SOON
                   </Typography>
               </div>
               <div style={cardStyle}>
                   <Typography  variant="h5" component="h2">
-                    Jueves
                   </Typography>
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
-                    Este espacio todavia no tiene horarios
+                  COMMING SOON
                   </Typography>
               </div>
               <div style={cardStyle}>
                   <Typography  variant="h5" component="h2">
-                    Viernes
                   </Typography>
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
-                    Este espacio todavia no tiene horarios
+                  COMMING SOON
                   </Typography>
               </div>
               <div style={cardStyle}>
                   <Typography  variant="h5" component="h2">
-                    Sabado
                   </Typography>
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
-                    Este espacio todavia no tiene horarios
+                  COMMING SOON
                   </Typography>
               </div>
               <div style={cardStyle}>
                   <Typography  variant="h5" component="h2">
-                    Domingo
                   </Typography>
                   <img src={astro} alt="logo" style={{height:'80%', width:'80%', minWidth:40, minHeight:40}}></img>
 
                   <Typography  variant="h5" component="h2">
-                    Este espacio todavia no tiene horarios
+                  COMMING SOON
                   </Typography>
               </div>
             </Carousel>
@@ -224,14 +217,14 @@ const App: React.FC<Props> = props => {
       </div>
     </BrowserView>
     <MobileView>
-    <div style={{width:'100%', overflowX: 'hidden', position:'relative'}}>
-        <div className={'div_backgrndimg'} style={{width:'100%', marginBottom:120}}>
-          <div style={left}>
-            SEXTA FEIRA
+      <div style={{width:'100%', overflowX: 'hidden', position:'relative'}}>
+        <div className={'div_backgrndimg'} style={{width:'100%', backgroundImage: 'linear-gradient(white, #f24d15)'}}>
+        <div style={left}>
+            <img src={logo} style={{width:'200px', height:'87px'}}/>
           </div> 
           <hr style={divider}/>
 
-          <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
+          <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:200 }}>
             <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
           <div id='cstrFreePlayerDiv'></div>          
           </div>
@@ -239,17 +232,17 @@ const App: React.FC<Props> = props => {
               <img src={wave}></img>           
           </div>
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:10 }}>
-              <span style={subtitleStyle}>Por siempre</span>
+              <span style={titleWhite}>Por siempre</span>
           </div>
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:5 }}>
-              <span style={subtitleStyle}>viernes</span>
+              <span style={titleWhite}>viernes</span>
           </div>
           
             <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:40 }}>
               <span style={share}>Compartir</span>
             </div>
             <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20 }}>
-              <div style={{marginRight:10}}>
+              <div style={{marginRight:10, marginBottom:10}}>
               <FacebookShareButton
                 url="https://sextafeirabu.com"
                 quote="Opa, sextafeira esta en vivo"
@@ -258,7 +251,7 @@ const App: React.FC<Props> = props => {
                 <FacebookIcon size={32} round />
               </FacebookShareButton> 
               </div>    
-              <div style={{marginRight:10}}>
+              <div style={{marginRight:10, marginBottom:10}}>
 
               <TwitterShareButton
                 url="https://sextafeirabu.com"
@@ -268,7 +261,7 @@ const App: React.FC<Props> = props => {
                 <TwitterIcon size={32} round />
               </TwitterShareButton>    
               </div>     
-              <div style={{marginRight:10}}>
+              <div style={{marginRight:10, marginBottom:10}}>
               <WhatsappShareButton
                 url="https://sextafeirabu.com"
                 title="Opa, sextafeira esta en vivo"
@@ -280,7 +273,7 @@ const App: React.FC<Props> = props => {
             </div>           
         </div>
 
-        <div style={{width:'100%', backgroundColor:'#fb5252'}}>
+        <div style={{width:'100%', backgroundColor:'#000000'}}>
           <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'  }}>
             <span style={titleWhite}>Dejanos tu comentario</span>
           </div>
@@ -401,7 +394,7 @@ var subtitleStyle = {
 
 var titleWhite = {
   fontFamily: 'halyard-display, sans-serif',
-  fontSize: 'calc(3em + 1vw)',
+  fontSize: 'calc(4em + 1vw)',
   color:'#FFFFFF',
   fontWeight:600,
   textAlign:'center' as 'center'
@@ -416,7 +409,8 @@ var titleBlack = {
 
 var share = {
   fontFamily: 'Barlow, sans-serif',
-  fontSize: 20
+  fontSize: 20,
+  color:'white'
 }
 
 const rightButton = {
@@ -436,7 +430,7 @@ const left = {
   position:'absolute' as 'absolute',
   display:'inline-block',
   top:10,
-  left:10,
+  left:50,
 }
 
 const rightButton2 = {
