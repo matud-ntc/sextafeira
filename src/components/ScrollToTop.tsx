@@ -9,13 +9,13 @@ const ScrollToTop: React.FC<Props> = props => {
     const [is_visible, setIs_visible] = useState(false);
     
     const toggleVisibility = () => {
-        if (window.pageYOffset > 300) {
+        if (window.pageYOffset > 100) {
             setIs_visible(true)
         } else {
             setIs_visible(false)
         }
     }
-    document.addEventListener("scroll", function(e) {
+    window.addEventListener("scroll", function(e) {
         toggleVisibility();
     });
   
