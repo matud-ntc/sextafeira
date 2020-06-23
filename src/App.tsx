@@ -367,9 +367,7 @@ const App: React.FC<Props> = props => {
               </FacebookProvider>
             </div>
           </div>
-          <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:20,}}>
-          <div className="fb-page" data-href="https://www.facebook.com/sextafeirabu/" data-tabs="timeline" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/sextafeirabu/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/sextafeirabu/">Sextafeira Radio</a></blockquote></div>
-        </div>
+          
         </div>
         <div style={right}>
           <ScrollToTop />
