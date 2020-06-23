@@ -48,7 +48,9 @@ const App: React.FC<Props> = props => {
 
   const myRef = useRef(null)
   const executeScroll = () => scrollToRef(myRef)
-  
+  const myRef2 = useRef(null)
+  const executeScroll2 = () => scrollToRef(myRef2)
+
   return(
     <div style={{width:'100%', overflowX: 'hidden', position:'relative'}}>
       <div className={'div_backgrndimg'} style={{width:'100%', padding:60, marginBottom:320}}>
@@ -117,16 +119,112 @@ const App: React.FC<Props> = props => {
             </div> 
           </div>           
       </div>
+
       <div style={{width:'100%', backgroundColor:'#fb5252',padding:30}}>
         <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
           <span style={titleWhite}>Dejanos tu comentario</span>
         </div>
         <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-          <div style={{backgroundColor:'#FFFFFF', width:'40%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",
-}}>
+          <div style={{backgroundColor:'#FFFFFF', width:'40%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
             <FacebookProvider appId="895498000924043" >
               <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
             </FacebookProvider>
+          </div>
+        </div>
+      </div>
+      <div style={{width:'100%', backgroundColor:'#fb5252',padding:30}}>
+        <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
+          <span style={titleWhite}>Dejanos tu comentario</span>
+        </div>
+
+        <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
+          <div style={{backgroundColor:'#f8f9fb', width:'40%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
+            <ReactCardCarousel spread='wide'>
+            <Card style={card}>
+                    <CardContent >
+                      <Typography  variant="h5" component="h2">
+                        Lunes
+                      </Typography>
+                      <img src={astro} alt="logo" style={{height:'500px', width:'470px', minWidth:40, minHeight:40}}></img>
+
+                      <Typography  variant="h5" component="h2">
+                        Este espacio todavia no tiene horarios
+                      </Typography>
+                    </CardContent>  
+                  </Card>
+                  <Card style={card}>
+                    <CardContent >
+                      <Typography  variant="h5" component="h2">
+                        Martes
+                      </Typography>
+                      <img src={astro} alt="logo" style={{height:'500px', width:'470px', minWidth:40, minHeight:40}}></img>
+
+                      <Typography  variant="h5" component="h2">
+                        Este espacio todavia no tiene horarios
+                      </Typography>
+                    </CardContent>  
+                  </Card>
+                  <Card style={card}>
+                    <CardContent >
+                      <Typography  variant="h5" component="h2">
+                        Miercoles
+                      </Typography>
+                      <img src={astro} alt="logo" style={{height:'500px', width:'470px', minWidth:40, minHeight:40}}></img>
+
+                      <Typography  variant="h5" component="h2">
+                        Este espacio todavia no tiene horarios
+                      </Typography>
+                    </CardContent>  
+                  </Card>
+                  <Card style={card}>
+                    <CardContent >
+                      <Typography  variant="h5" component="h2">
+                        Jueves
+                      </Typography>
+                      <img src={astro} alt="logo" style={{height:'500px', width:'470px', minWidth:40, minHeight:40}}></img>
+
+                      <Typography  variant="h5" component="h2">
+                        Este espacio todavia no tiene horarios
+                      </Typography>
+                    </CardContent>  
+                  </Card>
+                  <Card style={card}>
+                    <CardContent >
+                      <Typography  variant="h5" component="h2">
+                        Viernes
+                      </Typography>
+                      <img src={astro} alt="logo" style={{height:'500px', width:'470px', minWidth:40, minHeight:40}}></img>
+
+                      <Typography  variant="h5" component="h2">
+                        Este espacio todavia no tiene horarios
+                      </Typography>
+                    </CardContent>  
+                  </Card>
+                  <Card style={card}>
+                    <CardContent >
+                      <Typography  variant="h5" component="h2">
+                        Sabado
+                      </Typography>
+                      <img src={astro} alt="logo" style={{height:'500px', width:'470px', minWidth:40, minHeight:40}}></img>
+
+                      <Typography  variant="h5" component="h2">
+                        Este espacio todavia no tiene horarios
+                      </Typography>
+                    </CardContent>  
+                  </Card>
+                  <Card style={card}>
+                    <CardContent >
+                      <Typography  variant="h5" component="h2">
+                        Domingo
+                      </Typography>
+                      <img src={astro} alt="logo" style={{height:'500px', width:'470px', minWidth:40, minHeight:40}}></img>
+
+                      <Typography  variant="h5" component="h2">
+                        Este espacio todavia no tiene horarios
+                      </Typography>
+                    </CardContent>  
+                  </Card>
+            </ReactCardCarousel>
           </div>
         </div>
       </div>
