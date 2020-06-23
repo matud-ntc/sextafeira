@@ -122,7 +122,7 @@ const App: React.FC<Props> = props => {
             <span style={titleWhite}>Dejanos tu comentario</span>
           </div>
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
-            <div style={{backgroundColor:'#FFFFFF', width:'40%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
+            <div style={{backgroundColor:'#FFFFFF', width:'40%',minWidth:600, display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:50,   borderRadius: "15px",}}>
               <FacebookProvider appId="895498000924043" >
                 <Comments colorScheme="light" orderBy="reverse_time" numPosts="12" href="https://www.facebook.com/Testestest-100720924932190" />
               </FacebookProvider>
