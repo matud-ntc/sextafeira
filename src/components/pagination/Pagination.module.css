@@ -1,0 +1,23 @@
+.pagination {
+    display: inline;
+    font-family: "brandon-grotesque";
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 3.0125px;
+    text-align: center;
+    text-decoration-line: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.link:link { color:#FFFFFF; text-decoration: none!important; }
+.link:visited { color:#FFFFFF; text-decoration: none!important; }
+.link:hover { color:#FFFFFF; text-decoration: none!important; }
+.link:active { color:#FFFFFF; text-decoration: underline!important; }
+
+.centerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

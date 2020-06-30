@@ -1,4 +1,4 @@
-import React, {Component, useRef} from 'react';
+import React, {Component, useRef, useState} from 'react';
 import './App.css';
 import logo from './Images/logo.png';
 import slogan from './Images/slogan.png';
@@ -28,6 +28,8 @@ import wave from './Images/wave.svg'
 import ScrollToTop from './components/ScrollToTop';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+import Pagination from './components/pagination/Pagination';
+
 interface Props {
   currentView: string,
   token: string
@@ -37,9 +39,27 @@ const App: React.FC<Props> = props => {
 
   ReactGA.initialize('UA-163328180-1');
   ReactGA.pageview(window.location.pathname + window.location.search);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPageMobile, setCurrentPageMobile] = useState(1);
+
+  const [postsPerPage] = useState(2);
+  const [postsPerPageMobile] = useState(1);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+  const indexOfLastPostMobile = currentPageMobile * postsPerPageMobile;
+  const indexOfFirstPostMobile = indexOfLastPostMobile - postsPerPageMobile;
+
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+  const paginateMobile = pageNumberMobile => setCurrentPageMobile(pageNumberMobile);
+
+  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
   
-  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
-  // General scroll to element function
+  const urls = ['https://www.mixcloud.com/martín-dalto/seleccion1-sextafeira-radio/', 'https://www.mixcloud.com/martín-dalto/seleccion2-sextafeira-radio/', 'https://www.mixcloud.com/martín-dalto/seleccion3-sextafeira-radio/', 'https://www.mixcloud.com/martín-dalto/seleccion4-sextafeira-radio/'];
+
+  const currentPosts = urls.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPostsMobile = urls.slice(indexOfFirstPostMobile, indexOfLastPostMobile);
 
   const myRef = useRef(null)
   const executeScroll = () => scrollToRef(myRef)
@@ -63,7 +83,7 @@ const App: React.FC<Props> = props => {
             <span style={{cursor:'pointer', display:'block', marginRight:10, fontSize:20, fontWeight:500}} onClick={executeScroll2}>Noticias</span>
           </div>
             <div style={rightButton3}>
-            <span style={{cursor:'pointer', display:'block', marginRight:10, fontSize:20, fontWeight:500}} onClick={executeScroll2}>Podcasts</span>
+            <span style={{cursor:'pointer', display:'block', marginRight:10, fontSize:20, fontWeight:500}} onClick={executeScroll3}>Podcasts</span>
           </div> 
           <div style={rightButton4}>
             <span style={{cursor:'pointer', display:'block', marginRight:10, fontSize:20, fontWeight:500}} onClick={executeScroll}>Comentarios</span>
@@ -183,14 +203,18 @@ const App: React.FC<Props> = props => {
         </div>
         <div style={{width:'100%', backgroundColor:'#555555',padding:30, height:1200}}>
           <div ref={myRef3} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
-            <span style={titleWhite}>Podcasts</span>
+            <span style={titleWhite}>Podcasts y Playlists</span>
           </div>
-          {/*<div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
-            <ReactPlayer url={'https://www.mixcloud.com/mat%C3%ADas-dalto/mayo-11-de-2020/'}></ReactPlayer>
-  </div>*/}
-          <div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
-            <iframe src='https://www.4shared.com/web/embed/audio/file/WCTemy9Vea?type=NORMAL&widgetWidth=530&showArtwork=true&playlistHeight=0&widgetRid=37225837388' style={{overflow:'hidden',height:'152px',width:'530px',border: 0,margin:0}}></iframe>
-          </div>
+          {currentPosts.map((row: any, i: number) => (
+            <div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center'}}>
+              <ReactPlayer url={row} options={'light:1'}></ReactPlayer>
+            </div>
+          ))}
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={urls.length}
+            paginate={paginate}
+          />
         </div>
         <div style={{width:'100%', backgroundColor:'#000000',padding:30}}>
           <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center',  }}>
@@ -347,14 +371,20 @@ const App: React.FC<Props> = props => {
         </div>
         <div style={{width:'100%', backgroundColor:'#555555', height:800}}>
           <div ref={myRef3} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
-            <span style={titleWhite}>Podcasts</span>
+            <span style={titleWhite}>Podcasts y Playlists</span>
           </div>
-          {/*<div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
-            <ReactPlayer url={'https://www.mixcloud.com/mat%C3%ADas-dalto/mayo-11-de-2020/'}></ReactPlayer>
-  </div>*/}
-          <div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center', marginBottom:80}}>
-            <iframe src='https://www.4shared.com/web/embed/audio/file/WCTemy9Vea?type=MINI&widgetWidth=330&showArtwork=true&playlistHeight=0&widgetRid=591127821130' style={{overflow:'hidden',height:'62px',width:'330px',border: 0,margin:0}}></iframe>
-          </div>
+          {currentPostsMobile.map((row: any, i: number) => (
+            <div style={{width:'100%', display:'flex', justifyContent: 'center', alignItems: 'center'}}>
+              <ReactPlayer url={row} options={'light:1'}></ReactPlayer>
+            </div>
+          ))}
+          
+          <Pagination
+            postsPerPage={postsPerPageMobile}
+            totalPosts={urls.length}
+            paginate={paginateMobile}
+          />
+          
         </div>
         <div style={{width:'100%', backgroundColor:'#000000'}}>
           <div ref={myRef} style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'  }}>
