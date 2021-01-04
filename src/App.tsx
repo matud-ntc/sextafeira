@@ -90,8 +90,12 @@ const App: React.FC<Props> = props => {
           </div> 
 
           <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
-            <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
-          <div id='cstrFreePlayerDiv'></div>          
+          <script type='text/javascript'>
+var cstrFreePlayerUid = 537973;var cstrFreePlayerTheme = 'yellow';var cstrFreePlayerColor = '';
+</script>
+ <script type='text/javascript' src='//corscdn.caster.fm/freeplayer/FreePlanPlayerEmbed.js'></script>
+ <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
+  <div id='cstrFreePlayerDiv'></div>                    <div id='cstrFreePlayerDiv'></div>          
           </div>
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
               <img src={wave}></img>           
