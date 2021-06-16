@@ -91,7 +91,7 @@ const App: React.FC<Props> = props => {
 
           <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
           
- <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
+          <iframe src="https://zeno.fm/player/sextafeirawy53m0tnky8uv" width="575" height="250" scrolling="no"></iframe>
   <div id='cstrFreePlayerDiv'></div>                    
   <div id='cstrFreePlayerDiv'></div>          
           </div>
