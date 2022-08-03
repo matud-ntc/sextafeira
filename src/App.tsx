@@ -91,7 +91,7 @@ const App: React.FC<Props> = props => {
 
           <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:60 }}>
           
-          <iframe src="https://zeno.fm/player/sextafeira" width="575" height="250" frameBorder="0" scrolling="no"></iframe>
+          <iframe src="https://zeno.fm/player/sextafeira-radio" width="575" height="250" frameBorder="0" scrolling="no"></iframe>
   <div id='cstrFreePlayerDiv'></div>                    
   <div id='cstrFreePlayerDiv'></div>          
           </div>
@@ -245,7 +245,7 @@ const App: React.FC<Props> = props => {
           <hr style={divider}/>
 
           <div style={{ width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center', marginTop:200 }}>
-          <iframe src="https://zeno.fm/player/sextafeirawy53m0tnky8uv" width="575" height="250" scrolling="no"></iframe>
+          <iframe src="https://zeno.fm/player/sextafeira-radio" width="575" height="250" scrolling="no"></iframe>
           <div id='cstrFreePlayerDiv'></div>          
           </div>
           <div style={{width:'100%', display:'flex',  justifyContent: 'center', alignItems: 'center'}}>
