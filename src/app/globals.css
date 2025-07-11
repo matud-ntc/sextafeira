@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg-top: #d6cdff;
+  --color-bg-bottom: #f8f8f8;
+  --color-text: #0c0c0c;
+  --color-primary: #F14E29;
+  --color-primary-hover: #f74821;
+  --color-border: #000;
+  --color-card: #fff8e6;
+  --font-display: "Anton", sans-serif;
+  --font-body: "Quicksand", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Títulos y elementos destacados */
+h1, h2, h3, h4, h5, h6,
+.navbar a,
+.section-title,
+.btn-accent {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.1rem; /* Ajustado */
+  letter-spacing: -0.015em; /* Menos compacto */
+}
+
+/* Texto general */
+a, p, span, button {
+  font-weight: 500;
+  font-family: var(--font-body);
+}
+
+/* Botones primarios */
+.btn-accent {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 15px;
+  font-weight: 400;
+  padding: 0.5rem 1.25rem;
+  box-shadow: 2px 2px 0px var(--color-border);
+  transition: all 0.2s ease;
+}
+.btn-accent:hover {
+  background-color: var(--color-primary-hover);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--color-border);
+}
+
+/* Cards tipo La Bestia */
+.card {
+  background-color: var(--color-card);
+  border-radius: 1rem;
+  border: 2px solid var(--color-border);
+  box-shadow: 4px 4px 0px var(--color-border);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0px var(--color-border);
+}
+
+/* Imágenes con borde y glow sutil */
+.card img {
+  border-radius: 0.75rem;
+  border: 2px solid var(--color-border);
+  box-shadow: 0 0 8px rgba(236, 29, 111, 0.2);
+}
+
+/* Scrollbar sutil visible al hover */
+.scrollbar-on-hover {
+  scrollbar-width: none;
+}
+.scrollbar-on-hover:hover {
+  scrollbar-width: thin;
+}
+.scrollbar-on-hover::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-on-hover::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+}
+.scrollbar-on-hover::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Títulos de sección estilo viñeta */
+.section-title {
+  font-size: 1.2rem;
+  background: black;
+  color: white;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.navbar {
+  max-width: 1500px;
+  margin: 1rem auto; /* centra la navbar horizontalmente */
+  border: 1px solid var(--color-border);
+  box-shadow: 4px 4px 0px var(--color-border);
+  background: var(--color-card);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem; /* más alto y con buen espaciado horizontal */
 }
