@@ -14,12 +14,18 @@ export default async function HomePage() {
 
 
 
-<div className="flex flex-col lg:flex-row gap-4 h-[600px]">
-  <div className="flex-1">
-    <TwitchEmbedPlayer />
+<div className="flex flex-col lg:flex-row gap-4">
+  {/* Video */}
+  <div className="w-full lg:flex-1">
+    <div className="h-[220px] xs:h-[280px] sm:h-[350px] md:h-[400px] lg:h-[600px]">
+      <TwitchEmbedPlayer />
+    </div>
   </div>
-  <div className="w-full lg:w-[350px] h-full">
-    <TwitchChatEmbed />
+  {/* Chat */}
+  <div className="w-full lg:w-[350px]">
+    <div className="h-[320px] xs:h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px]">
+      <TwitchChatEmbed />
+    </div>
   </div>
 </div>
 

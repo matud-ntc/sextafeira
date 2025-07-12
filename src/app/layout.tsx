@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${quicksand.variable} ${anton.variable} theme-sextafeira`}>
-      <body className="antialiased min-h-screen bg-[#cfc8f0] bg-[url('/Wave5.svg')] bg-no-repeat bg-top bg-cover bg-fixed">
+      <body className="antialiased min-h-screen bg-[#cfc8f0] bg-[url('/Wave2.svg')] bg-no-repeat bg-top bg-cover bg-fixed">
         <Navbar />
         <main className="min-h-screen pb-[120px]">
           {children}

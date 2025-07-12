@@ -8,7 +8,9 @@ export default function TwitchChatEmbed() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const parent = window.location.hostname;
-      setChatSrc(`https://www.twitch.tv/embed/telemetaverso/chat?parent=${parent}`);
+      setChatSrc(
+        `https://www.twitch.tv/embed/telemetaverso/chat?parent=${parent}&parent=www.sextafeirabu.com`
+      );
     }
   }, []);
 

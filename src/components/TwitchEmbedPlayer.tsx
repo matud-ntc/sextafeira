@@ -28,15 +28,19 @@ export default function TwitchEmbedPlayer() {
   useEffect(() => {
     if (!loaded || !window.Twitch || !embedRef.current) return;
 
+    // Borra el anterior si existe
+    embedRef.current.innerHTML = '';
+
     new window.Twitch.Embed(embedRef.current.id, {
       width: '100%',
-      height: 480,
+      height: '100%', // esto lo hace responsivo y nunca cae en fallback
       channel: 'telemetaverso',
       layout: 'video',
       autoplay: true,
-      parent: [window.location.hostname],
+      parent: [window.location.hostname, "www.sextafeirabu.com"],
     });
+
   }, [loaded]);
 
-  return <div id="twitch-embed" ref={embedRef} className="w-full rounded-lg overflow-hidden" />;
+  return <div id="twitch-embed" ref={embedRef} className="w-full h-full rounded-lg overflow-hidden" />;
 }
